@@ -7,8 +7,6 @@ const addBtn = document.getElementById('submitBtn');
 const taskText = document.getElementById('task');
 const displayOfTasks = document.getElementById('listOfTasks');
 
-
-
 //Array of Tasks
 
 const allTasks = [];
@@ -22,6 +20,8 @@ submitForm.addEventListener('submit',(e)=>{
 addBtn.addEventListener('click',()=>{
     const userInput = taskText.value;
     taskCreator(userInput);
+    displayTasks(allTasks);
+    
     taskText.value = '';   
     
 });
@@ -36,24 +36,19 @@ function taskCreator(userInput){
     newTask['task'] = userInput;
     newTask['isComplete'] = false;
     allTasks.push(newTask);
-    
-    // creating newLi and displaying on HTML.
-   for(let i=0; i < allTasks.length; i++){
-    
-    const newLi = document.createElement('li');
-    newLi.innerHTML = allTasks[i].task;
-    displayOfTasks.push('newLi');
-
-   };
-    
-    
 
 };
 
 
-// function displayTasks(){
+function displayTasks(allTasks){
+    
+    for(let i=0; i < allTasks.length; i++){
+        const newLi = document.createElement('LI');
+        newLi.innerHTML = allTasks[i].task;
+        displayOfTasks.appendChild(newLi);
+      
+       };
 
 
-
-// }
+}
 
