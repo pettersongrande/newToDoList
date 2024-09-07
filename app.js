@@ -44,6 +44,7 @@ function displayTasks(allTasks){
     
     for(let i=0; i < allTasks.length; i++){
         const newLi = document.createElement('LI');
+        // i think the problem is here, I may need to use for.. of loop t handle this one better or maybe somehow find a way to interact with each "alltask[i].task better"
         newLi.innerHTML = allTasks[i].task;
         displayOfTasks.appendChild(newLi);
       
