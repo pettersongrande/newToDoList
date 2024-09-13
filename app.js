@@ -4,11 +4,14 @@
 
 const submitForm = document.getElementById("newTaskForm");
 const addBtn = document.getElementById('submitBtn');
-const taskText = document.getElementById('task');
+const taskInput = document.getElementById('task');
 const displayOfTasks = document.getElementById('listOfTasks');
 
-//Array of Tasks
+//Arrays of Tasks and Objects
 
+// Each user input should become an object inside of allObjects with two keys and its value.
+const allObjects = []; 
+// Each task should be extracted from those objects and added to allTasks as li, these li's can be looped and displayed.
 const allTasks = [];
 
 // Events
@@ -18,38 +21,77 @@ submitForm.addEventListener('submit',(e)=>{
 });
 
 addBtn.addEventListener('click',()=>{
-    const userInput = taskText.value;
-    taskCreator(userInput);
-    displayTasks(allTasks);
+    const userInput = taskInput.value;
+    objFactory(userInput);
+    displayingTasks(allTasks);
     
-    taskText.value = '';   
+    taskInput.value = '';   
     
 });
 
 
 //Creating Elements
 
+// This Function creates objects and add them into an array.
+function objFactory(input){
 
-function taskCreator(userInput){
+    const newObject = {};
+    newObject['task'] = input;
+    newObject['isComplete'] = false;
+    allObjects.push(newObject);
+    allTasks.push(makeTaskLi(newObject));
+    console.log(allTasks);
+    
+};
 
-    const newTask = document.createElement('obj');
-    newTask['task'] = userInput;
-    newTask['isComplete'] = false;
-    allTasks.push(newTask);
+
+function makeTaskLi(newObject) {
+
+    const newLi = document.createElement('li');
+    newLi.innerHTML = newObject.task;
+    
+    return newLi;
 
 };
 
 
-function displayTasks(allTasks){
-    
-    for(let i=0; i < allTasks.length; i++){
-        const newLi = document.createElement('LI');
-        // i think the problem is here, I may need to use for.. of loop t handle this one better or maybe somehow find a way to interact with each "alltask[i].task better"
-        newLi.innerHTML = allTasks[i].task;
-        displayOfTasks.appendChild(newLi);
-      
-       };
+function displayingTasks(arrayOfLis){
+
+    for(let tasks of arrayOfLis){
+        displayOfTasks.appendChild(tasks)
+    };
 
 
-}
+};
 
+// mikesTodo
+
+// const mockTodos = [
+//     {
+//         title: 'Buy milk',
+//         done: true
+//     },
+//     {
+//         title: 'Buy cheese',
+//         done: true
+//     },
+//     {
+//         title: 'Buy peas',
+//         done: false
+//     },
+//     {
+//         title: 'Buy chicken',
+//         done: false
+//     },
+//     {
+//         title: 'Buy sausage',
+//         done: false
+//     }
+// ];
+
+
+// for(let i = 0; i < mockTodos.length; i++){
+
+//     console.log(mockTodos[i].title);
+
+// };
