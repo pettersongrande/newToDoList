@@ -1,10 +1,20 @@
 body {
-    background-color: #73856a;
+    background-color: rgb(5,7,122);
+    /* make background white once box has been set up */
     
 }
 
-h1 {
-    color: #651A14;
+/* color for todo background 5,7,122 */
+.main {
+    color: aliceblue;
+    font-family: "Poppins", sans-serif;
+    font-style: normal; 
+
 }
 
+.main #title{
+
+    color: rgb(241,245,7);    
+
+};
 
