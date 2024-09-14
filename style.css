@@ -1,20 +1,37 @@
 body {
     background-color: rgb(5,7,122);
+    height: 100px;
     /* make background white once box has been set up */
     
 }
 
 /* color for todo background 5,7,122 */
-.main {
+.mainWrapper {
+    
     color: aliceblue;
     font-family: "Poppins", sans-serif;
-    font-style: normal; 
+    font-style: normal;
+    margin: 0.5em;
+    padding: 0.5em;
 
 }
 
 .main #title{
+    color: rgb(241,245,7);
+    font-size: 2.25em;
+    
 
-    color: rgb(241,245,7);    
+}
 
-};
+.toDoWrapper{
+
+    margin: 0.5em;
+    padding: 1em;
+    width: 25em;
+    height: 41em;
+    border: 1px solid yellow;
+    font-size: 0.75em;
+    
+    
+}
 
