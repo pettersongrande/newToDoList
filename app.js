@@ -49,6 +49,7 @@ function makeTaskLi(newObject) {
 
     const newLi = document.createElement('li');
     newLi.innerHTML = newObject.task;
+    newLi.classList.add("tasksText");
     
     return newLi;
 
