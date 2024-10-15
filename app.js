@@ -66,32 +66,32 @@ function displayingTasks(arrayOfLis){
 
 // mikesTodo
 
-// const mockTodos = [
-//     {
-//         title: 'Buy milk',
-//         done: true
-//     },
-//     {
-//         title: 'Buy cheese',
-//         done: true
-//     },
-//     {
-//         title: 'Buy peas',
-//         done: false
-//     },
-//     {
-//         title: 'Buy chicken',
-//         done: false
-//     },
-//     {
-//         title: 'Buy sausage',
-//         done: false
-//     }
-// ];
+const mockTodos = [
+    {
+        title: 'Buy milk',
+        done: true
+    },
+    {
+        title: 'Buy cheese',
+        done: true
+    },
+    {
+        title: 'Buy peas',
+        done: false
+    },
+    {
+        title: 'Buy chicken',
+        done: true
+    },
+    {
+        title: 'Buy sausage',
+        done: false
+    }
+];
 
 
-// for(let i = 0; i < mockTodos.length; i++){
 
-//     console.log(mockTodos[i].title);
 
-// };
+
+
+
